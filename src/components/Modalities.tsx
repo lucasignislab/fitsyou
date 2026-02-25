@@ -23,14 +23,14 @@ const modalities = [
         description: "Equilíbrio entre corpo e mente com foco em core, postura e flexibilidade.",
         icon: <Heart className="w-10 h-10" />,
         color: "bg-zinc-800",
-        image: "https://images.unsplash.com/photo-1518611012118-29615638a426?q=80&w=2070&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop",
     },
     {
-        title: "Mioterapia/Massagem",
+        title: "Massagem",
         description: "Recuperação muscular e alívio de tensões com técnicas especializadas.",
         icon: <Shield className="w-10 h-10" />,
         color: "bg-primary",
-        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop",
     },
 ];
 

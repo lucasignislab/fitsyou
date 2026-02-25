@@ -1,5 +1,4 @@
 import Modalities from "@/components/Modalities";
-import About from "@/components/About";
 import LeadCapture from "@/components/LeadCapture";
 import { ArrowRight, Zap, Trophy, Users, Star, MapPin } from "lucide-react";
 import Link from "next/link";
@@ -86,7 +85,7 @@ export default function Home() {
                 <MapPin className="text-primary skew-x-12" />
               </div>
               <div>
-                <div className="font-black text-2xl">BARÃO G.</div>
+                <div className="font-black text-2xl">BARÃO GERALDO</div>
                 <div className="text-xs text-white/50 uppercase font-bold tracking-widest">Localização Premium</div>
               </div>
             </div>
@@ -94,7 +93,27 @@ export default function Home() {
         </div>
       </div>
 
-      <About />
+      {/* Video Banner Section (1920x1080 Placeholder) */}
+      <section className="w-full bg-secondary border-y border-white/5 overflow-hidden">
+        <div className="max-w-[1920px] mx-auto aspect-1920/1080 relative group flex items-center justify-center bg-black/40">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,25,25,0.05)_0%,transparent_70%)]" />
+
+          {/* Placeholder Content */}
+          <div className="relative z-10 text-center px-6">
+            <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+              Espaço Reservado para Vídeo
+            </div>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white/10 uppercase italic tracking-tighter select-none">
+              1920 x 1080
+            </h2>
+          </div>
+
+          {/* Brutalist Accents */}
+          <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-white/5" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-white/5" />
+        </div>
+      </section>
+
       <Modalities />
       <LeadCapture />
     </main>

@@ -1,9 +1,19 @@
 "use client";
 
-import About from "@/components/About";
-import Image from "next/image";
+import ThreeDImageRing from "@/components/ThreeDImageRing";
+import StudioLimitSection from "@/components/StudioLimitSection";
+import StudioIntroSection from "@/components/StudioIntroSection";
 
 export default function StudioPage() {
+    const studioImages = [
+        "/fachada.JPG",
+        "/box1.JPG",
+        "/pilates1.JPG",
+        "/salamassagem.JPG",
+        "/pilates2.JPG",
+        "/boxexterno.JPG",
+    ];
+
     return (
         <main className="pt-20">
             <section className="bg-secondary py-24 border-b border-white/5">
@@ -17,39 +27,26 @@ export default function StudioPage() {
                 </div>
             </section>
 
-            <About />
+            <StudioIntroSection />
 
-            {/* Additional Studio Content: Gallery or Infra */}
-            <section className="py-24 bg-background">
-                <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="aspect-square bg-secondary border border-white/10 group overflow-hidden relative">
-                            <Image
-                                src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop"
-                                fill
-                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
-                                alt="Equipamentos"
-                            />
-                        </div>
-                        <div className="aspect-square bg-secondary border border-white/10 group overflow-hidden relative">
-                            <Image
-                                src="https://images.unsplash.com/photo-1571902953202-6b99de07399a?q=80&w=1974&auto=format&fit=crop"
-                                fill
-                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
-                                alt="Espaço"
-                            />
-                        </div>
-                        <div className="aspect-square bg-secondary border border-white/10 group overflow-hidden relative">
-                            <Image
-                                src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=2069&auto=format&fit=crop"
-                                fill
-                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
-                                alt="Performance"
-                            />
-                        </div>
+            {/* Interactive 3D Image Ring */}
+            <section className="py-32 bg-background overflow-hidden border-b border-white/5">
+                <div className="container mx-auto px-6 flex flex-col items-center">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase italic leading-none tracking-tighter mb-16 text-center">
+                        Nossa <span className="text-primary italic">Estrutura</span>
+                    </h2>
+                    <div className="w-full h-[600px] relative">
+                        <ThreeDImageRing
+                            images={studioImages}
+                            width={500}
+                            imageDistance={600}
+                            staggerDelay={0.15}
+                        />
                     </div>
                 </div>
             </section>
+
+            <StudioLimitSection />
         </main>
     );
 }

@@ -6,7 +6,7 @@
   --primary: #FF3B3B;
   --secondary: #1E1E1E;
   --accent: #FF3B3B;
-  
+
   --radius-none: 0px;
   --radius-sm: 2px;
   --radius-md: 4px;
@@ -18,10 +18,10 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+
   /* Brutalist Geometry */
   --radius-none: 0px;
   --radius-sm: 2px;
