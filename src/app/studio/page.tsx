@@ -1,8 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
 import ThreeDImageRing from "@/components/ThreeDImageRing";
 import StudioLimitSection from "@/components/StudioLimitSection";
 import StudioIntroSection from "@/components/StudioIntroSection";
+import ParallaxBackground from "@/components/ui/ParallaxBackground";
 
 export default function StudioPage() {
     const studioImages = [
@@ -30,16 +32,27 @@ export default function StudioPage() {
             <StudioIntroSection />
 
             {/* Interactive 3D Image Ring */}
-            <section className="py-32 bg-background overflow-hidden border-b border-white/5">
-                <div className="container mx-auto px-6 flex flex-col items-center">
-                    <h2 className="text-4xl md:text-6xl font-black uppercase italic leading-none tracking-tighter mb-16 text-center">
-                        Nossa <span className="text-primary italic">Estrutura</span>
-                    </h2>
-                    <div className="w-full h-[600px] relative">
+            <section className="py-40 bg-background relative overflow-hidden border-b border-white/5">
+                <ParallaxBackground text="FITS YOU STUDIO PERFORMANCE" intensity={2} />
+
+                <div className="container mx-auto px-6 flex flex-col items-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-5xl md:text-8xl font-black uppercase italic leading-none tracking-tighter">
+                            Nossa <span className="text-primary italic">Estrutura</span>
+                        </h2>
+                    </motion.div>
+
+                    <div className="w-full h-[700px] relative mt-10">
                         <ThreeDImageRing
                             images={studioImages}
-                            width={500}
-                            imageDistance={600}
+                            width={550}
+                            imageDistance={650}
                             staggerDelay={0.15}
                         />
                     </div>

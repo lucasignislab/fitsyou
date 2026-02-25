@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Target, Heart, Shield } from "lucide-react";
+import { Zap, Target, Heart } from "lucide-react";
+import Link from "next/link";
+import ParallaxBackground from "./ui/ParallaxBackground";
 
 const modalities = [
     {
@@ -10,6 +12,7 @@ const modalities = [
         icon: <Zap className="w-10 h-10" />,
         color: "bg-primary",
         image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop",
+        link: "/modalidades/cross-training"
     },
     {
         title: "Treinamento Funcional",
@@ -17,6 +20,7 @@ const modalities = [
         icon: <Target className="w-10 h-10" />,
         color: "bg-white",
         image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
+        link: "/modalidades/treinamento-funcional"
     },
     {
         title: "Pilates",
@@ -24,37 +28,37 @@ const modalities = [
         icon: <Heart className="w-10 h-10" />,
         color: "bg-zinc-800",
         image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop",
-    },
-    {
-        title: "Massagem",
-        description: "Recuperação muscular e alívio de tensões com técnicas especializadas.",
-        icon: <Shield className="w-10 h-10" />,
-        color: "bg-primary",
-        image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop",
+        link: "/modalidades/pilates"
     },
 ];
 
 export default function Modalities() {
     return (
-        <section id="modalidades" className="py-24 bg-background overflow-hidden">
-            <div className="container mx-auto px-6">
+        <section id="modalidades" className="py-24 bg-background relative overflow-hidden" aria-label="Modalidades de treino">
+            {/* Background Text - Top */}
+            <ParallaxBackground text="PUSH" intensity={1} className="h-1/3! bottom-auto!" baseOpacity={0.06} showGrid={false} showLines={false} />
+
+            {/* Background Text - Mid/Bottom behind cards */}
+            <ParallaxBackground text="DEADLIFT" intensity={2} className="top-1/2!" baseOpacity={0.04} showGrid={false} showLines={false} />
+
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
                     <div className="max-w-2xl">
-                        <h2 className="text-5xl md:text-7xl font-black uppercase italic leading-none tracking-tighter mb-6">
-                            Nossas <span className="text-primary italic">Modalidades</span>
-                        </h2>
-                        <p className="text-xl text-foreground/60 uppercase font-medium">
-                            Escolha o caminho que melhor se adapta aos seus objetivos. Do condicionamento extremo à recuperação consciente.
-                        </p>
+                        <header>
+                            <h2 className="text-5xl md:text-7xl font-black uppercase italic leading-none tracking-tighter mb-6">
+                                Nossas <span className="text-primary italic">Modalidades</span>
+                            </h2>
+                            <p className="text-xl text-foreground/60 uppercase font-medium">
+                                Escolha o caminho que melhor se adapta aos seus objetivos. Do condicionamento extremo à recuperação consciente.
+                            </p>
+                        </header>
                     </div>
                     <div className="text-right hidden md:block">
-                        <span className="text-[12rem] font-black leading-none text-white/5 uppercase select-none">
-                            PUSH
-                        </span>
+                        {/* Static text removed, now handled by ParallaxBackground at the top level */}
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
                     {modalities.map((item, index) => (
                         <motion.div
                             key={item.title}
@@ -62,7 +66,7 @@ export default function Modalities() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative group h-[500px] overflow-hidden border border-white/5"
+                            className="relative group h-[600px] overflow-hidden border border-white/5"
                         >
                             {/* Image with overlay */}
                             <div
@@ -77,7 +81,7 @@ export default function Modalities() {
                                     <div className="skew-x-12">{item.icon}</div>
                                 </div>
 
-                                <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-4 transition-transform group-hover:-translate-y-2">
+                                <h3 className="text-4xl font-black uppercase italic tracking-tighter mb-4 transition-transform group-hover:-translate-y-2">
                                     {item.title}
                                 </h3>
 
@@ -85,9 +89,9 @@ export default function Modalities() {
                                     {item.description}
                                 </p>
 
-                                <button className="mt-6 text-primary font-black uppercase tracking-widest text-xs flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
+                                <Link href={item.link} className="mt-6 text-primary font-black uppercase tracking-widest text-xs flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
                                     Saiba Mais <span>→</span>
-                                </button>
+                                </Link>
                             </div>
 
                             {/* Hover Accent */}

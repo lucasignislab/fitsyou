@@ -112,6 +112,12 @@ function RingImage({
                     backgroundRepeat: "no-repeat",
                 }}
             />
+            {/* Dynamic Lighting/Glow Effect */}
+            <div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.05)_0%,transparent_70%)] group-hover:bg-[radial-gradient(circle_at_50%_0%,rgba(255,10,10,0.1)_0%,transparent_70%)] transition-colors duration-500" />
+            <div className="absolute inset-0 z-20 pointer-events-none opacity-30 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/5 to-transparent" />
+            </div>
         </motion.div>
     );
 }
