@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
@@ -15,13 +15,21 @@ const focusItems = [
     "Equilíbrio"
 ];
 
-export default function TreinamentoFuncionalPage() {
+export default function FuncionalPage() {
+    const heroRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: heroRef,
+        offset: ["start start", "end start"]
+    });
+
+    const xMove = useTransform(scrollYProgress, [0, 0.7], [0, 400]);
+
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
             {/* Hero Section - Sticky */}
-            <section className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
-                <ParallaxBackground text="TREINO" intensity={2} className="h-1/2! bottom-auto!" />
-                <ParallaxBackground text="FUNCIONAL" intensity={-2} className="top-1/2! h-1/2!" showGrid={false} showLines={false} />
+            <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
+                <ParallaxBackground text="FUNCIONAL" intensity={2} className="h-1/2! bottom-auto" />
+                <ParallaxBackground text="FUNCIONAL" intensity={-2} className="top-1/2 h-1/2" showGrid={false} showLines={false} />
 
                 <div className="container mx-auto px-6 h-full flex items-center relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-16 w-full">
@@ -40,7 +48,10 @@ export default function TreinamentoFuncionalPage() {
                             </RevealItem>
                         </div>
 
-                        <div className="w-full lg:w-1/2 relative h-[400px] hidden lg:block">
+                        <motion.div
+                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
+                            style={{ x: xMove }}
+                        >
                             <RevealItem className="h-full">
                                 <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
                                     <div className="absolute inset-0 skew-x-12 scale-125">
@@ -53,7 +64,7 @@ export default function TreinamentoFuncionalPage() {
                                     </div>
                                 </div>
                             </RevealItem>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -96,7 +107,7 @@ export default function TreinamentoFuncionalPage() {
             </section>
 
             {/* Focus Section - Sticky */}
-            <section className="sticky top-20 py-32 bg-secondary relative overflow-hidden z-20">
+            <section className="sticky top-20 py-32 bg-secondary overflow-hidden z-20">
                 <ParallaxBackground text="OBJETIVO" intensity={3} diagonal rotate={-15} showLines={false} />
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -136,16 +147,17 @@ export default function TreinamentoFuncionalPage() {
             </section>
 
             {/* Final Lead Capture - Top Layer */}
-            <section className="relative z-30 py-40 bg-background border-t border-white/5 shadow-[0_-50px_100px_rgba(0,0,0,0.5)]">
+            <section className="relative z-30 py-40 bg-white text-secondary border-t border-secondary/5 shadow-[0_-50px_100px_rgba(30,30,30,0.1)]">
                 <RevealingSection
                     title={<>AGENDE UMA <span className="text-primary italic">AULA EXPERIMENTAL</span></>}
                     subtitle="COMECE A EVOLUIR"
+                    titleClassName="text-secondary"
                 >
                     <div className="mt-16">
                         <LeadCapture />
                     </div>
                 </RevealingSection>
             </section>
-        </main>
+        </main >
     );
 }

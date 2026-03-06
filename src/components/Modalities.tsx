@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Target, Heart } from "lucide-react";
+import { Zap, Target, Heart, Flower2, Sprout } from "lucide-react";
 import Link from "next/link";
 import ParallaxBackground from "./ui/ParallaxBackground";
 
@@ -29,6 +29,22 @@ const modalities = [
         color: "bg-zinc-800",
         image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop",
         link: "/modalidades/pilates"
+    },
+    {
+        title: "Yoga",
+        description: "Conexão profunda através da respiração, posturas e meditação para equilíbrio total.",
+        icon: <Flower2 className="w-10 h-10" />,
+        color: "bg-white",
+        image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?q=80&w=2070&auto=format&fit=crop",
+        link: "/modalidades/yoga"
+    },
+    {
+        title: "Massagem",
+        description: "Técnicas manuais para relaxamento muscular, alívio de tensões e bem-estar.",
+        icon: <Sprout className="w-10 h-10" />,
+        color: "bg-primary",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop",
+        link: "/modalidades/massagem"
     },
 ];
 

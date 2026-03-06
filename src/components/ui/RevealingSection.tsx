@@ -78,14 +78,38 @@ export default function RevealingSection({
 }
 
 // Sub-component for staggered children
-export function RevealItem({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+export function RevealItem({
+    children,
+    className = "",
+    delay = 0,
+    direction = "up"
+}: {
+    children: React.ReactNode,
+    className?: string,
+    delay?: number,
+    direction?: "up" | "down" | "left" | "right"
+}) {
+    const variants = {
+        hidden: {
+            opacity: 0,
+            y: direction === "up" ? 20 : direction === "down" ? -20 : 0,
+            x: direction === "left" ? 20 : direction === "right" ? -20 : 0
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            x: 0
+        }
+    };
+
     return (
         <motion.div
-            variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
+            variants={variants}
+            transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: delay
             }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
             className={className}
         >
             {children}
