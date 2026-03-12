@@ -97,17 +97,20 @@ export default function StudioLimitSection() {
                             </div>
 
                             {/* CTA Button */}
-                            <motion.button
+                            <motion.a
+                                href="https://wa.me/5519993188049"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.8 }}
-                                className="group relative bg-secondary hover:bg-primary transition-colors duration-300 py-6 px-12 -skew-x-12"
+                                className="group relative bg-secondary hover:bg-primary transition-colors duration-300 py-6 px-12 -skew-x-12 inline-block"
                             >
                                 <span className="block skew-x-12 text-2xl font-black italic uppercase text-white tracking-tighter">
                                     AGENDE UMA VISITA
                                 </span>
-                            </motion.button>
+                            </motion.a>
                         </div>
                     </div>
                 </div>

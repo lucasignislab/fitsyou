@@ -35,7 +35,7 @@ export default function Footer() {
                         </div>
                         <div className="flex flex-col gap-4">
                             <span className="text-primary">Contato</span>
-                            <Link href="/contato" className="hover:text-primary">WhatsApp</Link>
+                            <a href="https://wa.me/5519993188049" target="_blank" rel="noopener noreferrer" className="hover:text-primary">WhatsApp</a>
                             <Link href="/contato" className="hover:text-primary">E-mail</Link>
                             <Link href="/contato" className="hover:text-primary">Telefone</Link>
                         </div>
