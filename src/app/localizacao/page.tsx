@@ -1,7 +1,7 @@
 "use client";
 
 import { MapPin, Navigation, Car } from "lucide-react";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function LocalizacaoPage() {
     return (
@@ -47,27 +47,42 @@ export default function LocalizacaoPage() {
                                 </div>
                             </div>
 
-                            <button className="w-full bg-white text-black font-black py-5 uppercase italic hover:bg-primary hover:text-white transition-all -skew-x-12">
-                                <span className="skew-x-12">Abrir no Google Maps</span>
-                            </button>
+                            <a 
+                                href="https://www.google.com/maps/dir/?api=1&destination=R.%20Ant%C3%B4nio%20Galv%C3%A3o%20de%20O%20Barros%2C%2035%20-%20Arruamento%20Luiz%20Vicentin%2C%20Campinas%20-%20SP%2C%2013084-275"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-white text-black font-black py-5 uppercase italic hover:bg-primary hover:text-white transition-all -skew-x-12 cursor-pointer"
+                            >
+                                <span className="skew-x-12 block">Abrir no Google Maps</span>
+                            </a>
                         </div>
 
                         <div className="lg:w-2/3">
-                            <div className="w-full h-[500px] bg-secondary border border-white/10 relative overflow-hidden flex items-center justify-center group">
-                                {/* Placeholder for Map - In a real scenario we'd use Google Maps Embed */}
-                                <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity">
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop"
-                                        alt="Map pattern"
-                                        fill
-                                        className="object-cover"
-                                    />
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="w-full h-[500px] bg-secondary border border-white/10 relative overflow-hidden group"
+                            >
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.2001!2d-47.0782!3d-22.821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c70410cc7ebf%3A0x7d28717834cf8df5!2sR.%20Ant%C3%B4nio%20Galv%C3%A3o%20de%20O%20Barros%2C%2035%20-%20Arruamento%20Luiz%20Vicentin%2C%20Campinas%20-%20SP%2C%2013084-275!5e0!3m2!1spt-BR!2sbr!4v1710250000000!5m2!1spt-BR!2sbr"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Localização FitsYou"
+                                    className="opacity-100 transition-opacity duration-500"
+                                />
+                                
+                                <div className="absolute top-4 right-4 z-10 pointer-events-none">
+                                    <div className="bg-black/80 backdrop-blur-md px-4 py-2 border border-white/10 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                                        <span className="text-[10px] font-black uppercase tracking-widest leading-none">Mapa Em Tempo Real</span>
+                                    </div>
                                 </div>
-                                <div className="relative z-10 text-center">
-                                    <MapPin size={64} className="text-primary mx-auto mb-4 animate-bounce" />
-                                    <span className="block font-black text-xl uppercase italic">Mapa Interativo vindo em breve</span>
-                                </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

@@ -14,24 +14,24 @@ export default function HorariosPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-background">
-                <div className="container mx-auto px-6">
+            <section className="py-24 bg-white relative overflow-hidden">
+                <div className="container mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                        <div className="p-10 bg-secondary border-t-4 border-primary">
-                            <h3 className="font-black text-3xl mb-4 italic">MANHÃ</h3>
+                        <div className="p-10 bg-secondary border-t-4 border-primary shadow-2xl">
+                            <h3 className="font-black text-3xl mb-4 italic text-white">MANHÃ</h3>
                             <p className="text-white/50 font-bold uppercase text-xs tracking-widest leading-relaxed">
                                 Treinos dinâmicos para começar o dia com energia máxima.<br />
                                 Foco em ativação metabólica.
                             </p>
                         </div>
-                        <div className="p-10 bg-secondary border-t-4 border-white">
-                            <h3 className="font-black text-3xl mb-4 italic">TARDE</h3>
+                        <div className="p-10 bg-secondary border-t-4 border-white shadow-2xl">
+                            <h3 className="font-black text-3xl mb-4 italic text-white">TARDE</h3>
                             <p className="text-white/50 font-bold uppercase text-xs tracking-widest leading-relaxed">
                                 Horários flexíveis para quem busca treinar com calma e foco total na técnica.
                             </p>
                         </div>
-                        <div className="p-10 bg-secondary border-t-4 border-primary">
-                            <h3 className="font-black text-3xl mb-4 italic">NOITE</h3>
+                        <div className="p-10 bg-secondary border-t-4 border-primary shadow-2xl">
+                            <h3 className="font-black text-3xl mb-4 italic text-white">NOITE</h3>
                             <p className="text-white/50 font-bold uppercase text-xs tracking-widest leading-relaxed">
                                 Alta performance para encerrar o expediente e descarregar o stress.
                             </p>

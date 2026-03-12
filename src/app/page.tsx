@@ -117,25 +117,22 @@ export default function Home() {
         <ParallaxBackground text="HIGH PERFORMANCE" intensity={0.8} showLines={false} />
 
         <div className="max-w-[1920px] mx-auto aspect-1920/1080 relative group flex items-center justify-center bg-black/40 z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,25,25,0.05)_0%,transparent_70%)]" />
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+          >
+            <source src="/video1.mp4" type="video/mp4" />
+          </video>
 
-          {/* Placeholder Content */}
-          <div className="relative z-10 text-center px-6">
-            <RevealItem>
-              <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4">
-                Espaço Reservado para Vídeo
-              </div>
-            </RevealItem>
-            <RevealItem>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white/10 uppercase italic tracking-tighter select-none">
-                1920 x 1080
-              </h2>
-            </RevealItem>
-          </div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,25,25,0.1)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary via-transparent to-secondary pointer-events-none" />
 
           {/* Brutalist Accents */}
-          <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-white/5" />
-          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-white/5" />
+          <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-white/5 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-white/5 pointer-events-none" />
         </div>
       </section>
 
