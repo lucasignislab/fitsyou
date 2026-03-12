@@ -78,10 +78,10 @@ export default function YogaPage() {
                                 <h2 className="text-4xl lg:text-5xl font-bold mb-8 italic">O Método Yoga</h2>
                                 <div className="space-y-6 text-secondary/80 text-lg leading-relaxed">
                                     <p>
-                                        Nossas práticas combinam o Hatha Yoga tradicional com abordagens contemporâneas, focando na consciência corporal, controle da respiração e concentração mental.
+                                        O SwáSthya Yôga reúne técnicas e conceitos milenares que melhoram o desempenho pessoal e profissional de quem a pratica. Com o alinhamento do desempenho físico, mental e emocional, o praticante adquire uma maior consciência de si, ganhando autonomia para identificar e corrigir os comportamentos que prejudicam seu desenvolvimento, tornando-se uma pessoa mais lúcida e realizada.
                                     </p>
                                     <p>
-                                        As aulas são desenhadas para reduzir o estresse, melhorar a flexibilidade e promover um estado de equilíbrio interior que se reflete em todas as áreas da sua vida.
+                                        O Vinyasa Yoga é uma prática dinâmica, intensa e vigorosa que visa equilibrar o corpo e a mente. É caracterizado por uma transição suave entre as posturas, sincronizadas com a respiração. A prática é ministrada pelo professor Luiz Eduardo Borges que tem anos de prática diária e é formado pelo Instituto Yogaterapia.
                                     </p>
                                 </div>
                             </RevealItem>
