@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import ThreeDImageRing from "@/components/ThreeDImageRing";
 import StudioLimitSection from "@/components/StudioLimitSection";
 import StudioIntroSection from "@/components/StudioIntroSection";
+import StudioMissionSection from "@/components/StudioMissionSection";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 
 export default function StudioPage() {
@@ -30,6 +31,8 @@ export default function StudioPage() {
             </section>
 
             <StudioIntroSection />
+
+            <StudioMissionSection />
 
             {/* Interactive 3D Image Ring */}
             <section className="py-40 bg-background relative overflow-hidden border-b border-white/5">
