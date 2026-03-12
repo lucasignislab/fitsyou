@@ -32,13 +32,29 @@ export default function StudioMissionSection() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col gap-32">
-                    {/* Bloc 1: Missão */}
+                    {/* Bloc 1: Norte */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="max-w-4xl border-l-4 border-primary pl-8 md:pl-12"
+                    >
+                        <h3 className="text-4xl md:text-6xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8 text-zinc-900">
+                            Nosso <span className="text-primary italic">Norte</span>
+                        </h3>
+                        <p className="text-xl md:text-2xl text-zinc-600 leading-tight uppercase font-medium">
+                            Qualidade de vida e performance
+                        </p>
+                    </motion.div>
+
+                    {/* Bloc 2: Missão */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        className="max-w-4xl self-end text-right border-r-4 border-primary pr-8 md:pr-12"
                     >
                         <h3 className="text-4xl md:text-6xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8 text-zinc-900">
                             Nossa <span className="text-primary italic">Missão</span>
@@ -48,23 +64,7 @@ export default function StudioMissionSection() {
                         </p>
                     </motion.div>
 
-                    {/* Bloc 2: Visão */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="max-w-4xl self-end text-right border-r-4 border-primary pr-8 md:pr-12"
-                    >
-                        <h3 className="text-4xl md:text-6xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8 text-zinc-900">
-                            Nossa <span className="text-primary italic">Visão</span>
-                        </h3>
-                        <p className="text-xl md:text-2xl text-zinc-600 leading-tight uppercase font-medium">
-                            Se distribuir pela região a fim de atingir populações diversas e gerar um serviço diferenciado e inovador no mercado, capaz de envolver e se adaptar a diversas regiões. Oferecer serviços de forma diferenciada do mercado e se manter atualizada nas formas de aula em grupo e/ou particular que tem maior tendência do mercado, gerar aderência para fidelizar clientes, expandir a carteira e expandir valores para o mercado.
-                        </p>
-                    </motion.div>
-
-                    {/* Bloc 3: Valores */}
+                    {/* Bloc 3: Visão */}
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -73,10 +73,26 @@ export default function StudioMissionSection() {
                         className="max-w-4xl border-l-4 border-primary pl-8 md:pl-12"
                     >
                         <h3 className="text-4xl md:text-6xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8 text-zinc-900">
+                            Nossa <span className="text-primary italic">Visão</span>
+                        </h3>
+                        <p className="text-xl md:text-2xl text-zinc-600 leading-tight uppercase font-medium">
+                            Se distribuir pela região a fim de atingir populações diversas e gerar um serviço diferenciado e inovador no mercado, capaz de envolver e se adaptar a diversas regiões.
+                        </p>
+                    </motion.div>
+
+                    {/* Bloc 4: Valores */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                        className="max-w-4xl self-end text-right border-r-4 border-primary pr-8 md:pr-12"
+                    >
+                        <h3 className="text-4xl md:text-6xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8 text-zinc-900">
                             Nossos <span className="text-primary italic">Valores</span>
                         </h3>
                         <p className="text-xl md:text-2xl text-zinc-600 leading-tight uppercase font-medium">
-                            Promover um serviço justo e ético, com excelente custo benefício, valorizando o profissional e valorizando o cliente, reconhecendo o indivíduo e o inserindo em uma realidade melhor para si mesmo. (Trazer educação além dos benefícios físicos para que o aluno perdure ativamente ao longo da vida e aprenda a reconhecer e trabalhar suas particularidades).
+                            Promover um serviço justo e ético, com excelente custo benefício, valorizando o profissional e valorizando o cliente, reconhecendo o indivíduo e o inserindo em uma realidade melhor para si mesmo.
                         </p>
                     </motion.div>
                 </div>

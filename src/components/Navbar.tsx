@@ -22,11 +22,11 @@ export default function Navbar() {
 
     return (
         <nav
-            className="fixed top-0 left-0 w-full h-20 z-50 flex items-center transition-all duration-500 bg-background/95 backdrop-blur-xl border-b border-white/5"
+            className="fixed top-0 left-0 w-full h-20 z-50 flex items-center transition-all duration-500 bg-white border-b border-black/10"
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group hover:opacity-90 transition-opacity ml-8 md:ml-16 lg:ml-24">
-                    <div className="bg-white p-2 flex items-center justify-center -skew-x-12 group-hover:rotate-6 transition-transform duration-300">
+                    <div className="p-2 flex items-center justify-center -skew-x-12 group-hover:rotate-6 transition-transform duration-300">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/logofityou_trimmed.png" alt="Fits You Logo" className="h-[60px] w-auto object-contain skew-x-12" />
                     </div>
@@ -38,8 +38,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors ${pathname === link.href ? "text-primary" : "text-white"
-                                }`}
+                            className={`text-xs font-bold uppercase tracking-widest hover:text-red-600 transition-colors ${pathname === link.href ? "text-red-700" : "text-black"}`}
                         >
                             {link.name}
                         </Link>
@@ -48,7 +47,7 @@ export default function Navbar() {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="lg:hidden text-white"
+                    className="lg:hidden text-black"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
@@ -77,8 +76,7 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`text-4xl font-black uppercase italic tracking-tighter hover:text-primary transition-colors ${pathname === link.href ? "text-primary" : "text-white"
-                                        }`}
+                                    className={`text-4xl font-black uppercase italic tracking-tighter hover:text-red-600 transition-colors ${pathname === link.href ? "text-red-700" : "text-black"}`}
                                 >
                                     {link.name}
                                 </Link>
