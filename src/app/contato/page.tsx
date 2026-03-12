@@ -21,14 +21,31 @@ export default function ContatoPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Contact Info */}
                         <div className="space-y-8">
+                            <a 
+                                href="https://wa.me/5519993188049" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="p-8 bg-secondary border border-white/5 -skew-x-6 block hover:border-primary transition-colors cursor-pointer group"
+                            >
+                                <div className="skew-x-6 flex items-start gap-6">
+                                    <div className="w-12 h-12 bg-primary flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                                        <Phone />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-black uppercase text-lg mb-1 italic">WhatsApp</h3>
+                                        <p className="text-white/60 font-medium group-hover:text-white transition-colors">(19) 99318-8049</p>
+                                    </div>
+                                </div>
+                            </a>
+
                             <div className="p-8 bg-secondary border border-white/5 -skew-x-6">
                                 <div className="skew-x-6 flex items-start gap-6">
                                     <div className="w-12 h-12 bg-primary flex items-center justify-center text-white shrink-0">
                                         <Phone />
                                     </div>
                                     <div>
-                                        <h3 className="font-black uppercase text-lg mb-1 italic">WhatsApp</h3>
-                                        <p className="text-white/60 font-medium">(19) 99999-9999</p>
+                                        <h3 className="font-black uppercase text-lg mb-1 italic">Telefone</h3>
+                                        <p className="text-white/60 font-medium">(19) 3307-3001</p>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +69,12 @@ export default function ContatoPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-black uppercase text-lg mb-1 italic">Horário de Atendimento</h3>
-                                        <p className="text-white/60 font-bold text-xs uppercase tracking-widest leading-relaxed">Segunda a Sexta: 06h às 22h<br />Sábados: 08h às 13h</p>
+                                        <p className="text-white/60 font-bold text-xs uppercase tracking-widest leading-relaxed">
+                                            Segunda à Quinta: 06h30 às 21:00<br />
+                                            Sexta: 06h30 às 19h<br />
+                                            Sábados: 08h30 às 12h30<br />
+                                            Domingo: Fechado
+                                        </p>
                                     </div>
                                 </div>
                             </div>

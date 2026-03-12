@@ -101,12 +101,12 @@ export default function Navbar() {
                         </div>
 
                         <div className="flex gap-6 mt-8">
-                            <Link href="#" className="p-4 bg-secondary border border-white/10 text-primary">
+                            <a href="https://www.instagram.com/studiofitsyou/" target="_blank" rel="noopener noreferrer" className="p-4 bg-secondary border border-white/10 text-primary hover:bg-primary hover:text-white transition-colors">
                                 <Instagram size={24} />
-                            </Link>
-                            <Link href="#" className="p-4 bg-secondary border border-white/10 text-primary">
+                            </a>
+                            <a href="https://wa.me/5519993188049" target="_blank" rel="noopener noreferrer" className="p-4 bg-secondary border border-white/10 text-primary hover:bg-primary hover:text-white transition-colors">
                                 <MessageCircle size={24} />
-                            </Link>
+                            </a>
                         </div>
                     </motion.div>
                 )}

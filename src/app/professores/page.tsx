@@ -197,9 +197,9 @@ export default function ProfessoresPage() {
                                         </div>
 
                                         <div className="flex gap-4">
-                                            <div className="p-3 bg-white/5 hover:bg-primary transition-colors cursor-pointer text-white">
+                                            <a href="https://www.instagram.com/studiofitsyou/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 hover:bg-primary transition-colors cursor-pointer text-white">
                                                 <Instagram size={24} />
-                                            </div>
+                                            </a>
                                         </div>
                                     </motion.div>
                                 </div>

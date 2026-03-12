@@ -35,12 +35,12 @@ export default function LeadCapture() {
                                 />
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                <button className="flex-1 bg-primary text-white font-black py-5 px-8 uppercase italic flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-all -skew-x-12 group">
+                                <a href="https://wa.me/5519993188049" target="_blank" rel="noopener noreferrer" className="flex-1 bg-primary text-white font-black py-5 px-8 uppercase italic flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-all -skew-x-12 group">
                                     <span className="skew-x-12 flex items-center gap-2">
                                         <Download size={20} />
                                         Receber via WhatsApp
                                     </span>
-                                </button>
+                                </a>
                             </div>
                             <p className="text-[10px] text-white/30 uppercase text-center font-bold tracking-[0.2em] mt-6">
                                 Nós odiamos spam. Seus dados estão seguros conosco.

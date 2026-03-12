@@ -14,12 +14,12 @@ export default function Footer() {
                             R. Antônio Galvão de O Barros, 35 - Arruamento Luiz Vicentin, Campinas - SP, 13084-275
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="w-12 h-12 bg-secondary border border-white/10 flex items-center justify-center hover:text-primary transition-colors">
+                            <a href="https://www.instagram.com/studiofitsyou/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-secondary border border-white/10 flex items-center justify-center hover:text-primary transition-colors">
                                 <Instagram />
-                            </Link>
-                            <Link href="#" className="w-12 h-12 bg-secondary border border-white/10 flex items-center justify-center hover:text-primary transition-colors">
+                            </a>
+                            <a href="https://www.facebook.com/studiofitsyou" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-secondary border border-white/10 flex items-center justify-center hover:text-primary transition-colors">
                                 <Facebook />
-                            </Link>
+                            </a>
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
                         © 2026 Fits You Studio. All rights reserved.
                     </p>
                     <p className="text-[10px] text-white/20 uppercase font-bold tracking-[0.3em]">
-                        Created by Anti-Gravity
+                        Created by <a href="https://www.lucascoelho.site" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Lucas Coelho</a>
                     </p>
                 </div>
             </div>
