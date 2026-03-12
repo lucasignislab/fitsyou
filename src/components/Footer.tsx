@@ -7,9 +7,11 @@ export default function Footer() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
                     <div className="max-w-md">
-                        <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-6">
-                            Fits <span className="text-primary">You</span>
-                        </h3>
+                        <Link href="/" className="block mb-6 hover:opacity-90 transition-opacity w-fit group">
+                            <div className="bg-white p-2 flex items-center justify-center -skew-x-12 group-hover:rotate-6 transition-transform duration-300">
+                                <img src="/logofityou_trimmed.png" alt="Fits You Logo" className="h-[80px] w-auto object-contain skew-x-12" />
+                            </div>
+                        </Link>
                         <p className="text-white/40 font-medium uppercase text-sm mb-6">
                             R. Antônio Galvão de O Barros, 35 - Arruamento Luiz Vicentin, Campinas - SP, 13084-275
                         </p>

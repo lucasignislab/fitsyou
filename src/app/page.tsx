@@ -14,7 +14,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center overflow-hidden border-b border-white/5">
         <ParallaxBackground text="FITS YOU PERFORMANCE" intensity={1.5} />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 pt-24 lg:pt-32">
           <div className="max-w-4xl">
             <RevealItem>
               <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-secondary border border-white/10 text-primary text-sm font-bold -skew-x-12">

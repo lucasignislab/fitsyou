@@ -35,13 +35,10 @@ export default function Navbar() {
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 bg-primary flex items-center justify-center -skew-x-12 group-hover:rotate-12 transition-transform duration-300">
-                        <span className="font-black text-2xl skew-x-12 text-white">F</span>
+                <Link href="/" className="flex items-center gap-2 group hover:opacity-90 transition-opacity ml-8 md:ml-16 lg:ml-24">
+                    <div className="bg-white p-2 flex items-center justify-center -skew-x-12 group-hover:rotate-6 transition-transform duration-300">
+                        <img src="/logofityou_trimmed.png" alt="Fits You Logo" className="h-[60px] w-auto object-contain skew-x-12" />
                     </div>
-                    <span className="text-2xl font-black uppercase tracking-tighter italic">
-                        Fits <span className="text-primary">You</span>
-                    </span>
                 </Link>
 
                 {/* Desktop Links */}
