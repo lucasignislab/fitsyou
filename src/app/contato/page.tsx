@@ -5,6 +5,9 @@ import { Mail, Phone, Clock } from "lucide-react";
 export default function ContatoPage() {
     return (
         <main className="pt-20">
+            {/* Faixa Preta (Espaçador) */}
+            <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
+
             <section className="bg-secondary py-24 border-b border-white/5">
                 <div className="container mx-auto px-6">
                     <h1 className="text-6xl md:text-8xl font-black uppercase italic leading-none tracking-tighter mb-8">

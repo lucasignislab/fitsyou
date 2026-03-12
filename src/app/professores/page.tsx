@@ -7,18 +7,18 @@ import { useState } from "react";
 
 const teachers = [
     {
-        name: "Samuel Hernandez",
+        name: "Samuel Hernandes",
         role: "Professor Responsável",
         specialty: "Massoterapia, Biomecânica & Pilates",
         image: "/samuel.png",
         bio: "Bacharel em Ed. Física pela UNICAMP, Coach Lvl 2 pela CrossFit® e 10 anos de experiência como instrutor de Pilates. Especializações em Nutrição Esportiva e Biomecânica, Quiropraxia, Mioterapia e Shiatsu.",
     },
     {
-        name: "Larissa Medina",
+        name: "Danielle Mancini",
         role: "Professora",
-        specialty: "Swásthya, Hatha & Yoga Restaurativo",
-        image: "/larissa.png",
-        bio: "Graduada em Biologia, tem Yoga como parte da sua vida desde a infância graças a influência dos seus pais. É formada em Swásthya Yoga, Hatha Yoga e Yoga Restaurativo.",
+        specialty: "Pilates",
+        image: "/danielle.png",
+        bio: "Profissional de Educação Física formada pela Universidade Estadual de Campinas (UNICAMP), com certificação em Pilates pela VOLL Group, concluída em 2021.",
     },
     {
         name: "Victor Gadelha",
@@ -28,16 +28,9 @@ const teachers = [
         bio: "Se formou em Educação Física pela Universidade Estadual de Campinas (UNICAMP) e desde então já atuou como Instrutor de Musculação, Avaliador Físico, Personal Trainer e até Professor de Ginástica Laboral. Fez diversos cursos na área, entre eles, Nutrição do Exercício, Envelhecimento e Exercício Físico, Hipertrofia e Emagrecimento, Personal Training e Treinamento para Idosos.",
     },
     {
-        name: "Danielle Mancini",
-        role: "Professora",
-        specialty: "Pilates Contemporâneo & Mobilidade",
-        image: "/danielle.png",
-        bio: "Profissional de Educação Física formada pela Universidade Estadual de Campinas (UNICAMP), com certificação em Pilates pela VOLL Group, concluída em 2021.",
-    },
-    {
         name: "Izabelle Cesco",
         role: "Professora",
-        specialty: "Pilates Master & Esportes Adaptados",
+        specialty: "Pilates",
         image: "/izabelle.png",
         bio: "Se formou em Educação Física pela Universidade Estadual de Campinas. Fez parte da comissão técnica do time de Handebol em Cadeira de Rodas da ADEACAMP (Associação de Esportes Adaptados de Campinas). Além disso, tem formação master em Pilates pela empresa VOLL Pilates.",
     },
@@ -49,18 +42,25 @@ const teachers = [
         bio: "Profissional de Educação Física, formada pela Unicamp. No CrossFit desde 2017, atua como atleta RX e coach há 7 anos. Movida por desafios e pela rotina competitiva, participa ativamente de campeonatos e vive a preparação, a intensidade e a disciplina do esporte. Essa vivência como atleta de competição se reflete nas aulas, com foco em performance, estratégia e evolução constante.",
     },
     {
-        name: "Luiz Eduardo Borges",
-        role: "Professor",
-        specialty: "Vinyasa Yoga & Yogaterapia",
-        image: "/luiz_eduardo.jpeg",
-        bio: "Luiz Eduardo Borges ministra aulas de vinyasa yoga há dois anos. Traz consigo uma bagagem de anos de prática diária e é formado pelo Instituto Yogaterapia. Também fez cursos de yoga para gestantes, crianças e terceira idade. Além disso, hoje se especializa em yogaterapia, trazendo aulas que buscam o bem estar do corpo físico e mental.",
-    },
-    {
         name: "Lucas Trematore",
         role: "Professor",
         specialty: "Reabilitação, Pilates & LPO",
         image: "/lucas.png",
         bio: "Lucas é graduado em Educação Física pela Pontifícia Universidade Católica de Campinas e está cursando Fisioterapia pela Anhanguera Educacional, além da Pós-graduação em Reabilitação de Lesões pela Faculdade Uniguaçu. Possui formação em Pilates Tradicional (MetaPilates), LPO – Lift Like a Russian, Treinamento de Força e Prevenção de Lesão (Prof. Dr. Charles Lopes), além de especializações em Massagem Esportiva e Liberação Miofascial.",
+    },
+    {
+        name: "Larissa Medina",
+        role: "Professora",
+        specialty: "Swásthya, Hatha & Yoga Restaurativo",
+        image: "/larissa.png",
+        bio: "Graduada em Biologia, tem Yoga como parte da sua vida desde a infância graças a influência dos seus pais. É formada em Swásthya Yoga, Hatha Yoga e Yoga Restaurativo.",
+    },
+    {
+        name: "Luiz Eduardo Borges", // user called him Eduardo, his name includes Eduardo
+        role: "Professor",
+        specialty: "Vinyasa Yoga & Yogaterapia",
+        image: "/luiz_eduardo.jpeg",
+        bio: "Luiz Eduardo Borges ministra aulas de vinyasa yoga há dois anos. Traz consigo uma bagagem de anos de prática diária e é formado pelo Instituto Yogaterapia. Também fez cursos de yoga para gestantes, crianças e terceira idade. Além disso, hoje se especializa em yogaterapia, trazendo aulas que buscam o bem estar do corpo físico e mental.",
     }
 ];
 
@@ -69,6 +69,9 @@ export default function ProfessoresPage() {
 
     return (
         <main className="pt-20">
+            {/* Faixa Preta (Espaçador) */}
+            <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
+
             <section className="bg-secondary py-24 border-b border-white/5">
                 <div className="container mx-auto px-6">
                     <h1 className="text-6xl md:text-8xl font-black uppercase italic leading-none tracking-tighter mb-8">

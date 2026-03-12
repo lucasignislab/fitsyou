@@ -1,23 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, Instagram, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const navLinks = [
         { name: "O Studio", href: "/studio" },
@@ -31,12 +22,12 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-background/90 backdrop-blur-xl py-4" : "bg-transparent py-8"
-                }`}
+            className="fixed top-0 left-0 w-full h-20 z-50 flex items-center transition-all duration-500 bg-background/95 backdrop-blur-xl border-b border-white/5"
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group hover:opacity-90 transition-opacity ml-8 md:ml-16 lg:ml-24">
                     <div className="bg-white p-2 flex items-center justify-center -skew-x-12 group-hover:rotate-6 transition-transform duration-300">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/logofityou_trimmed.png" alt="Fits You Logo" className="h-[60px] w-auto object-contain skew-x-12" />
                     </div>
                 </Link>
@@ -53,9 +44,6 @@ export default function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Link href="/contato" className="px-6 py-2 bg-primary text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
-                        Começar
-                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}

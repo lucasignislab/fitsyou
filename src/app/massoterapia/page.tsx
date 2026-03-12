@@ -28,6 +28,9 @@ export default function MassoterapiaPage() {
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            {/* Faixa Preta (Espaçador) */}
+            <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
+
             {/* Hero Section - Sticky */}
             <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
                 <ParallaxBackground text="MASSAGEM" intensity={2} className="h-1/2! bottom-auto" />
@@ -35,7 +38,7 @@ export default function MassoterapiaPage() {
 
                 <div className="container mx-auto px-6 h-full flex items-center relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-16 w-full">
-                        <div className="w-full lg:w-1/2">
+                        <div className="w-full lg:w-1/2 relative z-20">
                             <RevealItem>
                                 <h1 className="text-6xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
                                     Massoterapia
@@ -50,7 +53,7 @@ export default function MassoterapiaPage() {
                         </div>
 
                         <motion.div
-                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
+                            className="w-full lg:w-1/2 relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 h-[400px] hidden lg:block z-30 opacity-90 hover:opacity-100 transition-opacity"
                             style={{ x: xMove }}
                         >
                             <RevealItem className="h-full">
