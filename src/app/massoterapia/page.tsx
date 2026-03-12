@@ -53,22 +53,9 @@ export default function MassoterapiaPage() {
                         </div>
 
                         <motion.div
-                            className="w-full lg:w-1/2 relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 h-[400px] hidden lg:block z-30 opacity-90 hover:opacity-100 transition-opacity"
+                            className="w-full lg:w-1/2 relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 h-[400px] hidden lg:block z-30"
                             style={{ x: xMove }}
                         >
-                            <RevealItem className="h-full">
-                                <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
-                                    <div className="absolute inset-0 skew-x-12 scale-125">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070"
-                                            alt="Massage Therapy"
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </RevealItem>
                         </motion.div>
                     </div>
                 </div>
