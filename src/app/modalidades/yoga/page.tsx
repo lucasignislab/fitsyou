@@ -71,17 +71,15 @@ export default function YogaPage() {
             {/* Methodology Section - Overlapping */}
             <section className="relative z-10 py-32 bg-white text-secondary overflow-hidden">
                 <ParallaxBackground text="MIND" intensity={1.5} theme="light" />
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto px-6 relative z-10 space-y-32">
+                    {/* SwáSthya Yôga */}
                     <div className="flex flex-col lg:flex-row-reverse items-center gap-20">
                         <div className="w-full lg:w-1/2">
                             <RevealItem>
-                                <h2 className="text-4xl lg:text-5xl font-bold mb-8 italic">O Método Yoga</h2>
+                                <h2 className="text-4xl lg:text-5xl font-bold mb-8 italic">SwáSthya Yôga</h2>
                                 <div className="space-y-6 text-secondary/80 text-lg leading-relaxed">
                                     <p>
                                         O SwáSthya Yôga reúne técnicas e conceitos milenares que melhoram o desempenho pessoal e profissional de quem a pratica. Com o alinhamento do desempenho físico, mental e emocional, o praticante adquire uma maior consciência de si, ganhando autonomia para identificar e corrigir os comportamentos que prejudicam seu desenvolvimento, tornando-se uma pessoa mais lúcida e realizada.
-                                    </p>
-                                    <p>
-                                        O Vinyasa Yoga é uma prática dinâmica, intensa e vigorosa que visa equilibrar o corpo e a mente. É caracterizado por uma transição suave entre as posturas, sincronizadas com a respiração. A prática é ministrada pelo professor Luiz Eduardo Borges que tem anos de prática diária e é formado pelo Instituto Yogaterapia.
                                     </p>
                                 </div>
                             </RevealItem>
@@ -92,7 +90,35 @@ export default function YogaPage() {
                                     <div className="absolute inset-0 -skew-x-3 scale-125">
                                         <Image
                                             src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2062"
-                                            alt="Yoga Methodology"
+                                            alt="SwáSthya Yôga"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </RevealItem>
+                        </div>
+                    </div>
+
+                    {/* Vinyasa Yoga */}
+                    <div className="flex flex-col lg:flex-row items-center gap-20">
+                        <div className="w-full lg:w-1/2">
+                            <RevealItem>
+                                <h2 className="text-4xl lg:text-5xl font-bold mb-8 italic">Vinyasa Yoga</h2>
+                                <div className="space-y-6 text-secondary/80 text-lg leading-relaxed">
+                                    <p>
+                                        O Vinyasa Yoga é uma prática dinâmica, intensa e vigorosa que visa equilibrar o corpo e a mente. É caracterizado por uma transição suave entre as posturas, sincronizadas com a respiração. A prática é ministrada pelo professor Luiz Eduardo Borges que tem anos de prática diária e é formado pelo Instituto Yogaterapia.
+                                    </p>
+                                </div>
+                            </RevealItem>
+                        </div>
+                        <div className="w-full lg:w-1/2 relative h-[500px]">
+                            <RevealItem className="h-full">
+                                <div className="relative h-full border-4 border-secondary/10 -skew-x-3 overflow-hidden">
+                                    <div className="absolute inset-0 skew-x-3 scale-125">
+                                        <Image
+                                            src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2070"
+                                            alt="Vinyasa Yoga"
                                             fill
                                             className="object-cover"
                                         />
