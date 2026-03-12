@@ -52,8 +52,15 @@ const teachers = [
         name: "Luiz Eduardo Borges",
         role: "Coach",
         specialty: "Vinyasa Yoga & Yogaterapia",
-        image: "/luiz_eduardo.png",
+        image: "/luiz_eduardo.jpeg",
         bio: "Luiz Eduardo Borges ministra aulas de vinyasa yoga há dois anos. Traz consigo uma bagagem de anos de prática diária e é formado pelo Instituto Yogaterapia. Também fez cursos de yoga para gestantes, crianças e terceira idade. Além disso, hoje se especializa em yogaterapia, trazendo aulas que buscam o bem estar do corpo físico e mental.",
+    },
+    {
+        name: "Lucas Trematore",
+        role: "Coach",
+        specialty: "Reabilitação, Pilates & LPO",
+        image: "/lucas.png",
+        bio: "Lucas é graduado em Educação Física pela Pontifícia Universidade Católica de Campinas e está cursando Fisioterapia pela Anhanguera Educacional, além da Pós-graduação em Reabilitação de Lesões pela Faculdade Uniguaçu. Possui formação em Pilates Tradicional (MetaPilates), LPO – Lift Like a Russian, Treinamento de Força e Prevenção de Lesão (Prof. Dr. Charles Lopes), além de especializações em Massagem Esportiva e Liberação Miofascial.",
     }
 ];
 
