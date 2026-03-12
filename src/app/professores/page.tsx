@@ -9,7 +9,7 @@ const teachers = [
     {
         name: "Samuel Hernandez",
         role: "Professor Responsável",
-        specialty: "Nutrição, Biomecânica & Pilates",
+        specialty: "Massoterapia, Biomecânica & Pilates",
         image: "/samuel.png",
         bio: "Bacharel em Ed. Física pela UNICAMP, Coach Lvl 2 pela CrossFit® e 10 anos de experiência como instrutor de Pilates. Especializações em Nutrição Esportiva e Biomecânica, Quiropraxia, Mioterapia e Shiatsu.",
     },
@@ -23,7 +23,7 @@ const teachers = [
     {
         name: "Victor Gadelha",
         role: "Professor",
-        specialty: "Hipertrofia, Emagrecimento & Cross Training",
+        specialty: "Pilates, Força e Funcional",
         image: "/victor.png",
         bio: "Se formou em Educação Física pela Universidade Estadual de Campinas (UNICAMP) e desde então já atuou como Instrutor de Musculação, Avaliador Físico, Personal Trainer e até Professor de Ginástica Laboral. Fez diversos cursos na área, entre eles, Nutrição do Exercício, Envelhecimento e Exercício Físico, Hipertrofia e Emagrecimento, Personal Training e Treinamento para Idosos.",
     },
@@ -44,7 +44,7 @@ const teachers = [
     {
         name: "Marcela Calux",
         role: "Professora",
-        specialty: "Performance, Crossfit & Atleta RX",
+        specialty: "Performance, Cross Training & Atleta RX",
         image: "/marcela.png",
         bio: "Profissional de Educação Física, formada pela Unicamp. No CrossFit desde 2017, atua como atleta RX e coach há 7 anos. Movida por desafios e pela rotina competitiva, participa ativamente de campeonatos e vive a preparação, a intensidade e a disciplina do esporte. Essa vivência como atleta de competição se reflete nas aulas, com foco em performance, estratégia e evolução constante.",
     },
