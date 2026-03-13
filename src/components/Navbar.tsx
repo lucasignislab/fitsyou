@@ -61,10 +61,10 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-0 left-0 w-full h-screen bg-background p-10 z-60 flex flex-col justify-center gap-8"
+                        className="absolute top-0 left-0 w-full h-screen bg-white p-10 z-[60] flex flex-col justify-center gap-8"
                     >
                         <button
-                            className="absolute top-8 right-8 text-white"
+                            className="absolute top-8 right-8 text-black hover:text-red-600 transition-colors"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             <X size={40} />
@@ -76,7 +76,9 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`text-4xl font-black uppercase italic tracking-tighter hover:text-red-600 transition-colors ${pathname === link.href ? "text-red-700" : "text-black"}`}
+                                    className={`text-4xl font-black uppercase italic tracking-tighter hover:text-red-600 transition-colors ${
+                                        pathname === link.href ? "text-red-600" : "text-black"
+                                    }`}
                                 >
                                     {link.name}
                                 </Link>
@@ -84,10 +86,20 @@ export default function Navbar() {
                         </div>
 
                         <div className="flex gap-6 mt-8">
-                            <a href="https://www.instagram.com/studiofitsyou/" target="_blank" rel="noopener noreferrer" className="p-4 bg-secondary border border-white/10 text-primary hover:bg-primary hover:text-white transition-colors">
+                            <a 
+                                href="https://www.instagram.com/studiofitsyou/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="p-4 bg-white border border-black/10 text-black hover:border-red-500 hover:text-red-600 transition-all duration-300 shadow-sm"
+                            >
                                 <Instagram size={24} />
                             </a>
-                            <a href="https://wa.me/5519993188049" target="_blank" rel="noopener noreferrer" className="p-4 bg-secondary border border-white/10 text-primary hover:bg-primary hover:text-white transition-colors">
+                            <a 
+                                href="https://wa.me/5519993188049" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="p-4 bg-white border border-black/10 text-black hover:border-red-500 hover:text-red-600 transition-all duration-300 shadow-sm"
+                            >
                                 <MessageCircle size={24} />
                             </a>
                         </div>
