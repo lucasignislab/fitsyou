@@ -61,7 +61,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-0 left-0 w-full h-screen bg-white p-10 z-[60] flex flex-col justify-center gap-8"
+                        className="absolute top-0 left-0 w-full h-screen bg-white p-10 z-60 flex flex-col justify-center gap-8"
                     >
                         <button
                             className="absolute top-8 right-8 text-black hover:text-red-600 transition-colors"
@@ -90,17 +90,17 @@ export default function Navbar() {
                                 href="https://www.instagram.com/studiofitsyou/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="p-4 bg-white border border-black/10 text-black hover:border-red-500 hover:text-red-600 transition-all duration-300 shadow-sm"
+                                className="text-red-600 hover:scale-110 transition-transform duration-300"
                             >
-                                <Instagram size={24} />
+                                <Instagram size={32} />
                             </a>
                             <a 
                                 href="https://wa.me/5519993188049" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="p-4 bg-white border border-black/10 text-black hover:border-red-500 hover:text-red-600 transition-all duration-300 shadow-sm"
+                                className="text-red-600 hover:scale-110 transition-transform duration-300"
                             >
-                                <MessageCircle size={24} />
+                                <MessageCircle size={32} />
                             </a>
                         </div>
                     </motion.div>

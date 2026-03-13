@@ -82,8 +82,8 @@ export default function FuncionalPage() {
                     <div className="flex flex-col lg:flex-row items-center gap-16 w-full">
                         <div className="w-full lg:w-1/2">
                             <RevealItem>
-                                <h1 className="text-6xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
-                                    Funcional <br />
+                                <h1 className="text-4xl md:text-8xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
+                                    Treinamento Funcional <br />
                                     <span className="text-primary italic">Training</span>
                                 </h1>
                             </RevealItem>

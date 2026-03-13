@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
 
@@ -9,18 +10,24 @@ export default function Footer() {
                     <div className="max-w-md">
                         <Link href="/" className="block mb-6 hover:opacity-90 transition-opacity w-fit group ml-2">
                             <div className="flex items-center justify-center -skew-x-12 group-hover:rotate-6 transition-transform duration-300">
-                                <img src="/logofityou_trimmed.png" alt="Fits You Logo" className="h-[80px] w-auto object-contain skew-x-12" />
+                                <Image 
+                                    src="/logofityou_trimmed.png" 
+                                    alt="Fits You Logo" 
+                                    width={160}
+                                    height={80}
+                                    className="h-[80px] w-auto object-contain skew-x-12" 
+                                />
                             </div>
                         </Link>
                         <p className="text-secondary/60 font-medium uppercase text-sm mb-6">
                             R. Antônio Galvão de O Barros, 35 - Arruamento Luiz Vicentin, Campinas - SP, 13084-275
                         </p>
-                        <div className="flex gap-4">
-                            <a href="https://www.instagram.com/studiofitsyou/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-secondary border border-black/10 flex items-center justify-center text-white hover:text-primary transition-colors">
-                                <Instagram size={20} />
+                        <div className="flex gap-6">
+                            <a href="https://www.instagram.com/studiofitsyou/" target="_blank" rel="noopener noreferrer" className="text-primary hover:scale-110 transition-transform">
+                                <Instagram size={24} />
                             </a>
-                            <a href="https://www.facebook.com/studiofitsyou" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-secondary border border-black/10 flex items-center justify-center text-white hover:text-primary transition-colors">
-                                <Facebook size={20} />
+                            <a href="https://www.facebook.com/studiofitsyou" target="_blank" rel="noopener noreferrer" className="text-primary hover:scale-110 transition-transform">
+                                <Facebook size={24} />
                             </a>
                         </div>
                     </div>

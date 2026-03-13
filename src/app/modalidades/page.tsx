@@ -101,7 +101,7 @@ export default function ModalitiesPage() {
 
                 <div className="container mx-auto px-6 py-24 h-full flex flex-col justify-center relative z-10">
                     <RevealItem>
-                        <h1 className="text-7xl md:text-[10rem] font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
+                        <h1 className="text-5xl md:text-[10rem] font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
                             Nossas <br /><span className="text-primary italic">Modalidades</span>
                         </h1>
                     </RevealItem>

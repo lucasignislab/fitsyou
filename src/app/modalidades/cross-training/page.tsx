@@ -82,7 +82,7 @@ export default function CrossTrainingPage() {
                     <div className="flex flex-col lg:flex-row items-center gap-16 w-full">
                         <div className="w-full lg:w-1/2">
                             <RevealItem>
-                                <h1 className="text-6xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
+                                <h1 className="text-5xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
                                     Cross <span className="text-primary italic">Training</span>
                                 </h1>
                             </RevealItem>

@@ -116,7 +116,7 @@ export default function MassoterapiaPage() {
                     <div className="flex flex-col lg:flex-row items-center gap-16 w-full">
                         <div className="w-full lg:w-1/2 relative z-20">
                             <RevealItem>
-                                <h1 className="text-6xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
+                                <h1 className="text-4xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
                                     Massoterapia
                                 </h1>
                             </RevealItem>
