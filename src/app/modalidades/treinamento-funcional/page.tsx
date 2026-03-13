@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { Check } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
@@ -16,18 +16,65 @@ const focusItems = [
 ];
 
 export default function FuncionalPage() {
-    const heroRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"]
-    });
-
-    const xMove = useTransform(scrollYProgress, [0, 0.7], [0, 400]);
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/treinamento-funcional/#service",
+                "name": "Treinamento Funcional Fits You",
+                "serviceType": "Exercício Funcional e Resistência Cardiovascular",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "description": "Treinamento em Campinas que trabalha músculos e articulações de forma integrada. Focado em resistência muscular, coordenação, força e equilíbrio para as demandas do dia a dia através de circuitos dinâmicos.",
+                "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Barão Geraldo, Campinas"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Diferenciais do Funcional",
+                    "itemListElement": [
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Circuitos Dinâmicos e Motivadores" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adaptação Individualizada por Professor" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Uso de Implementos e Peso do Corpo" } }
+                    ]
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/treinamento-funcional/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Como funciona o Treinamento Funcional no Studio Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Treinamento Funcional utiliza circuitos que combinam força e resistência cardiovascular. Cada aula é diferente e dinâmica, com exercícios adaptados pelo professor para o nível de condicionamento de cada aluno."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Quais as capacidades trabalhadas no Treino Funcional?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O foco está no desenvolvimento da resistência muscular, coordenação motora, força, equilíbrio, flexibilidade, potência e velocidade."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Hero Section - Sticky */}
-            <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
+            <section className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
                 <ParallaxBackground text="FUNCIONAL" intensity={2} className="h-1/2! bottom-auto" />
                 <ParallaxBackground text="FUNCIONAL" intensity={-2} className="top-1/2 h-1/2" showGrid={false} showLines={false} />
 
@@ -43,28 +90,11 @@ export default function FuncionalPage() {
 
                             <RevealItem>
                                 <p className="text-xl md:text-2xl text-white/70 uppercase font-medium leading-tight mb-12 max-w-xl">
-                                    Trabalhe seus músculos e articulações de forma unificada. Tenha um corpo funcional e ganhe mais energia.
+                                    Trabalhe músculos e articulações de forma integrada, desenvolvendo um corpo mais funcional, com mais energia e preparado para as demandas do dia a dia.
                                 </p>
                             </RevealItem>
                         </div>
 
-                        <motion.div
-                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
-                            style={{ x: xMove }}
-                        >
-                            <RevealItem className="h-full">
-                                <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
-                                    <div className="absolute inset-0 skew-x-12 scale-125">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1541534401786-2077dee47a54?q=80&w=2070"
-                                            alt="Treinamento Funcional"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                </div>
-                            </RevealItem>
-                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -82,10 +112,10 @@ export default function FuncionalPage() {
                                 transition={{ duration: 0.8 }}
                             >
                                 <p className="text-xl md:text-2xl font-medium leading-tight uppercase mb-8">
-                                    São exercícios que melhoram a preparação cardiovascular, a resistência muscular e a flexibilidade, além da velocidade e potência do aluno, induzindo equilíbrio e coordenação, habilidades essenciais para o dia a dia.
+                                    O Treinamento Funcional utiliza exercícios que estimulam a preparação cardiovascular, a resistência muscular e a flexibilidade, além de desenvolver velocidade, potência, equilíbrio e coordenação — capacidades essenciais para se movimentar melhor dentro e fora do treino.
                                 </p>
                                 <p className="text-lg text-secondary/70 uppercase font-bold leading-tight">
-                                    Para que a experiência não seja entediante, o aluno terá a cada aula um novo treino, sempre com a orientação do professor e de acordo com sua preparação física. Os circuitos são compostos por exercícios que trabalham força e resistência cardiovascular, com peso corporal ou com implementos, para que os resultados sejam notados no dia a dia.
+                                    Para tornar a experiência dinâmica e motivadora, cada aula apresenta um treino diferente, sempre conduzido e adaptado pelo professor de acordo com a preparação física de cada aluno. Os circuitos combinam exercícios de força e resistência cardiovascular, utilizando o peso do próprio corpo e diferentes implementos, para que os benefícios do treino sejam percebidos também nas atividades do cotidiano.
                                 </p>
                             </motion.div>
                         </div>

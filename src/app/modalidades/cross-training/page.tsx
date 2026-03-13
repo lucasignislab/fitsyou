@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { Check } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
@@ -21,18 +21,60 @@ const focusItems = [
 ];
 
 export default function CrossTrainingPage() {
-    const heroRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"]
-    });
-
-    const xMove = useTransform(scrollYProgress, [0, 0.7], [0, 400]);
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/cross-training/#service",
+                "name": "Cross Training Fits You",
+                "serviceType": "Treinamento de Alta Intensidade e Condicionamento Físico",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "description": "Programa de força e condicionamento físico em Campinas que utiliza exercícios funcionais em alta intensidade, focado em 9 capacidades físicas: Força, Potência, Velocidade, Coordenação, Agilidade, Equilíbrio, Flexibilidade, Stamina e Cardiovascular.",
+                "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Barão Geraldo, Campinas"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Aula experimental de Cross Training com adaptação individualizada."
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/cross-training/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Iniciantes podem fazer Cross Training no Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sim. As aulas de Cross Training no Fits You respeitam a intensidade individual. Nossos professores realizam adaptações de carga e movimento, permitindo que iniciantes e alunos avançados treinem juntos com segurança e eficiência."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Quais são os benefícios do Cross Training para o dia a dia?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Cross Training trabalha músculos e articulações de forma integrada, melhorando o movemento funcional, a saúde articular e desenvolvendo capacidades como resistência cardiovascular, força e flexibilidade."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Hero Section - Sticky */}
-            <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
+            <section className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
                 <ParallaxBackground text="CROSS" intensity={2} className="h-1/2! bottom-auto" />
                 <ParallaxBackground text="TRAINING" intensity={-2} className="top-1/2 h-1/2" showGrid={false} showLines={false} />
 
@@ -47,30 +89,11 @@ export default function CrossTrainingPage() {
 
                             <RevealItem>
                                 <p className="text-xl md:text-2xl text-white/70 uppercase font-medium leading-tight mb-12 max-w-xl">
-                                    O Cross Training é um programa de treinamento de força e condicionamento físico,
-                                    composto por exercícios funcionais de alta intensidade.
+                                    O Cross Training é um programa de força e condicionamento físico que utiliza exercícios funcionais em alta intensidade, desenvolvendo diferentes capacidades físicas e melhorando o movimento no dia a dia.
                                 </p>
                             </RevealItem>
                         </div>
 
-                        <motion.div
-                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
-                            style={{ x: xMove }}
-                        >
-                            <RevealItem className="h-full">
-                                <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
-                                    <div className="absolute inset-0 skew-x-12 scale-125">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1534367507873-d2b7e24959ac?q=80&w=2070&auto=format&fit=crop"
-                                            alt="Cross Training"
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </RevealItem>
-                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -88,12 +111,10 @@ export default function CrossTrainingPage() {
                                 transition={{ duration: 0.8 }}
                             >
                                 <p className="text-xl md:text-2xl font-medium leading-tight uppercase mb-8">
-                                    Os exercícios utilizados focam nos músculos e nas articulações do corpo de forma conjunta,
-                                    possibilitando assim a transferência dessas habilidades para outros pontos do seu dia a dia.
+                                    Os exercícios utilizados trabalham músculos e articulações de forma integrada, favorecendo o desenvolvimento de capacidades que se transferem para diversas situações do dia a dia.
                                 </p>
                                 <p className="text-lg text-secondary/70 uppercase font-bold leading-tight">
-                                    Trabalhamos dentro da alta intensidade individual de cada aluno, o que quer dizer que um aluno pode estar muito bem condicionado
-                                    e ainda assim participar da aula com um sedentário, já que o professor responsável fará as devidas adaptações do treino de cada um - como carga, amplitude de execução ou até uma pequena mudança no exercício.
+                                    As aulas são conduzidas respeitando a alta intensidade individual de cada aluno. Isso significa que pessoas com diferentes níveis de condicionamento podem treinar juntas: desde iniciantes até alunos mais avançados. O professor responsável realiza as adaptações necessárias para cada aluno — ajustando carga, amplitude de movimento ou até mesmo modificando o exercício — garantindo segurança, eficiência e evolução para todos.
                                 </p>
                             </motion.div>
                         </div>

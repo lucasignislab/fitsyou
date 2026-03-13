@@ -1,8 +1,81 @@
 import LeadCapture from "@/components/LeadCapture";
 
 export default function HorariosPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://fitsyou.com.br/#localbusiness",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "06:00",
+                        "closes": "22:00"
+                    }
+                ]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/horarios/#grade",
+                "name": "Grade de Horários Fits You",
+                "description": "Opções de treinos e modalidades disponíveis das 06:00 às 22:00, com foco em ativação metabólica pela manhã, técnica à tarde e alta performance à noite.",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "hoursAvailable": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "description": "Manhã: Ativação Metabólica",
+                        "opens": "06:00",
+                        "closes": "12:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "description": "Tarde: Foco na Técnica",
+                        "opens": "12:00",
+                        "closes": "18:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "description": "Noite: Alta Performance",
+                        "opens": "18:00",
+                        "closes": "22:00"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/horarios/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Qual o horário de funcionamento do Studio Fits You em Campinas?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Studio Fits You oferece horários das 06:00 às 22:00, cobrindo os períodos da manhã, tarde e noite para se adaptar à rotina de cada aluno."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Como posso receber a grade de horários completa?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Você pode solicitar a grade de horários atualizada e a tabela de preços diretamente via WhatsApp, facilitando o acesso às informações da sua modalidade preferida."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <main className="pt-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Faixa Preta (Espaçador) */}
             <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
 

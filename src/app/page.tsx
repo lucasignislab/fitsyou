@@ -4,12 +4,89 @@ import Modalities from "@/components/Modalities";
 import LeadCapture from "@/components/LeadCapture";
 import { ArrowRight, Zap, Trophy, Users, Star, MapPin } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HealthAndBeautyBusiness",
+        "@id": "https://fitsyou.com.br/#studio",
+        "name": "Fits You - Studio de Treinamento e Bem-Estar",
+        "url": "https://fitsyou.com.br",
+        "logo": "https://fitsyou.com.br/logo.png",
+        "image": "https://fitsyou.com.br/foto-studio-fitsyou.jpg",
+        "description": "O estúdio mais completo de Campinas localizado em Barão Geraldo. Oferecemos Cross Training, Treinamento Funcional, Pilates, Yoga e Massagem com foco em alta performance e cuidado individualizado.",
+        "telephone": "+55-19-99318-8049",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Antônio Galvão de O Barros, 35 - Arruamento Luiz Vicentin",
+          "addressLocality": "Campinas",
+          "addressRegion": "SP",
+          "postalCode": "13084-275",
+          "addressCountry": "BR",
+          "addressDistrict": "Barão Geraldo"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -22.821,
+          "longitude": -47.0782
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Campinas"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "500"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Modalidades Fits You",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cross Training" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Treinamento Funcional" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pilates" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yoga" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Massagem" } }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Onde fica o estúdio Fits You em Campinas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O Fits You possui localização premium no distrito de Barão Geraldo, em Campinas, sendo reconhecido como o estúdio mais completo da região."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais modalidades de treino o Fits You oferece?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oferecemos uma grade completa que inclui Cross Training de alta intensidade, Treinamento Funcional, Pilates para postura, Yoga para equilíbrio e Massagem para recuperação muscular."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen selection:bg-primary selection:text-white">
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden border-b border-white/5">
         <ParallaxBackground text="FITS YOU PERFORMANCE" intensity={1.5} />

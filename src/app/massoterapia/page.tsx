@@ -18,6 +18,78 @@ const principles = [
 ];
 
 export default function MassoterapiaPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/massoterapia/#service",
+                "name": "Massoterapia Especializada Fits You",
+                "serviceType": "Terapia Manual e Recuperação de Atletas",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "description": "Tratamentos especializados em massoterapia em Campinas para eliminação de dores e recuperação ativa. Técnicas de Shiatsu, Mioterapia, Agulhamento a seco, Drenagem e Modeladora.",
+                "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Barão Geraldo, Campinas"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Técnicas Terapêuticas",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Shiatsu",
+                                "description": "Massagem oriental focada no equilíbrio energético e alívio de tensões na coluna."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Mioterapia e Pontos Gatilho",
+                                "description": "Tratamento focado em nódulos de tensão muscular e restauração articular."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Agulhamento a seco (Dry Needling)",
+                                "description": "Aplicação de agulhas finas para relaxamento profundo da musculatura e melhora da mobilidade."
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/massoterapia/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Para que serve o Agulhamento a seco no Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O agulhamento a seco é utilizado para tratar pontos gatilho e dores musculares intensas, ajudando a reduzir a dor e melhorar a mobilidade de forma rápida."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Qual a diferença entre Shiatsu e Mioterapia?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Shiatsu atua no equilíbrio energético e relaxamento profundo através de pontos meridianos, enquanto a Mioterapia foca na liberação de nódulos de tensão muscular e restauração de movimentos."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     const heroRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: heroRef,
@@ -28,6 +100,10 @@ export default function MassoterapiaPage() {
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Faixa Preta (Espaçador) */}
             <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
 

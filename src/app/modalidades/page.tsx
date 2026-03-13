@@ -7,8 +7,93 @@ import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
 
 export default function ModalitiesPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ItemList",
+                "@id": "https://fitsyou.com.br/modalidades/#list",
+                "name": "Catálogo de Modalidades Fits You",
+                "description": "Metodologias que vão do alto rendimento à reabilitação consciente em Campinas.",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Service",
+                            "name": "Cross Training",
+                            "description": "Treinamento de alta intensidade focado em força e condicionamento metabólico."
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Service",
+                            "name": "Treinamento Funcional",
+                            "description": "Melhoria de movimentos naturais e ganho de agilidade para o cotidiano."
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Service",
+                            "name": "Pilates",
+                            "description": "Equilíbrio entre corpo e mente com foco em core, postura e flexibilidade."
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Service",
+                            "name": "Yoga",
+                            "description": "Conexão profunda através da respiração, posturas e meditação."
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "Service",
+                            "name": "Massagem",
+                            "description": "Técnicas manuais para relaxamento muscular e alívio de tensões."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/modalidades/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Como escolher a melhor modalidade no Studio Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A escolha depende do seu objetivo: para queima calórica e força, indicamos Cross Training ou Funcional. Para alinhamento e saúde articular, o Pilates é ideal."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Qual modalidade é indicada para emagrecimento e alta intensidade?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Se você busca alta intensidade e ganho de força explosiva, o Cross Training e o Treinamento Funcional são as opções mais recomendadas para desafiar seus limites."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Hero Section - Sticky */}
             <section className="sticky top-20 min-h-[80vh] border-b border-white/5 bg-secondary z-0">
                 <ParallaxBackground text="YOUR" intensity={2} className="h-1/2! bottom-auto!" />

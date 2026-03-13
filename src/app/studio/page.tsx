@@ -6,9 +6,67 @@ import StudioLimitSection from "@/components/StudioLimitSection";
 import StudioIntroSection from "@/components/StudioIntroSection";
 import StudioMissionSection from "@/components/StudioMissionSection";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
+import Script from "next/script";
 
 export default function StudioPage() {
-    const studioImages = [
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HealthAndBeautyBusiness",
+        "@id": "https://fitsyou.com.br/o-studio/#about",
+        "name": "Fits You - Studio Multidisciplinar",
+        "description": "Espaço multidisciplinar em Campinas focado em treinamento de alta performance, saúde articular e bem-estar pleno. Redefinindo o conceito de treinamento individualizado.",
+        "knowsAbout": [
+          "Treinamento de Alta Performance",
+          "Saúde Articular",
+          "Qualidade de Vida",
+          "Pilates",
+          "Yoga",
+          "Treino Funcional"
+        ],
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Estúdio de Pilates Completo",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Sala de Massagem",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Galpão Externo para Yoga e Funcional",
+            "value": true
+          }
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Comunidade Fits You",
+          "description": "Uma comunidade que treina junto focada em longevidade e performance."
+        }
+      },
+      {
+        "@type": "AboutPage",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Fits You",
+          "slogan": "O seu limite é apenas o início",
+          "mission": "Proporcionar um serviço de atividade física e saúde a fim de promover qualidade de vida que gere aderência, amor e autonomia.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Fits You",
+            "description": "Excelência em custo-benefício, valorização do profissional e do cliente.",
+            "values": "Justo, Ético, Inovador, Multidisciplinar"
+          }
+        }
+      }
+    ]
+  };
+
+  const studioImages = [
         "/fachada.JPG",
         "/box1.JPG",
         "/pilates1.JPG",
@@ -19,6 +77,11 @@ export default function StudioPage() {
 
     return (
         <main className="pt-20">
+            <Script
+                id="schema-studio"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Faixa Preta (Espaçador) */}
             <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
 

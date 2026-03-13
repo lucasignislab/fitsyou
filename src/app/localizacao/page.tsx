@@ -4,8 +4,73 @@ import { MapPin, Navigation, Car } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function LocalizacaoPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ExerciseGym",
+                "@id": "https://fitsyou.com.br/#localbusiness",
+                "name": "Fits You - Studio de Treinamento",
+                "url": "https://fitsyou.com.br",
+                "logo": "https://fitsyou.com.br/logo.png",
+                "image": "https://fitsyou.com.br/fotos/localizacao-fits-you.jpg",
+                "description": "Localização premium em Barão Geraldo, Campinas. O estúdio mais completo da região focado em performance e bem-estar.",
+                "telephone": "+55-19-99175-1043",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "R. Antônio Galvão de O Barros, 35",
+                    "addressLocality": "Campinas",
+                    "addressRegion": "SP",
+                    "postalCode": "13084-275",
+                    "addressCountry": "BR",
+                    "addressDistrict": "Barão Geraldo"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -22.821,
+                    "longitude": -47.0782
+                },
+                "hasMap": "https://www.google.com/maps/dir/?api=1&destination=R.%20Ant%C3%B4nio%20Galv%C3%A3o%20de%20O%20Barros%2C%2035%20-%20Arruamento%20Luiz%20Vicentin%2C%20Campinas%20-%20SP%2C%2013084-275",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "06:00",
+                        "closes": "22:00"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/localizacao/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Onde fica o Studio Fits You em Campinas?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Studio Fits You possui localização premium no distrito de Barão Geraldo, em Campinas, sendo facilmente acessível para quem busca treinamento de alta performance na região."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Qual o horário de funcionamento do Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Funcionamos de segunda a sexta-feira, das 06:00 às 22:00, com horários flexíveis para todas as modalidades."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <main className="pt-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Faixa Preta (Espaçador) */}
             <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
 

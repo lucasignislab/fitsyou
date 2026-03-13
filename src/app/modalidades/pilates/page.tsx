@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { Check } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
@@ -18,18 +18,66 @@ const principles = [
 ];
 
 export default function PilatesPage() {
-    const heroRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"]
-    });
-
-    const xMove = useTransform(scrollYProgress, [0, 0.7], [0, 400]);
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/pilates/#service",
+                "name": "Pilates Personalizado Fits You",
+                "serviceType": "Pilates Contemporâneo e Reabilitação Postural",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "description": "Pilates em Campinas (Barão Geraldo) com foco em força, postura e flexibilidade. Aulas em turmas reduzidas e personalizadas para todas as fases da vida e níveis de condicionamento.",
+                "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Barão Geraldo, Campinas"
+                },
+                "additionalType": "http://www.productontology.org/id/Pilates",
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Princípios do Pilates Fits You",
+                    "itemListElement": [
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Respiração e Concentração" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Centro (Core) e Controle" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Precisão e Fluidez" } }
+                    ]
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/pilates/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Como são as aulas de Pilates no Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "As aulas são realizadas em turmas reduzidas, permitindo uma personalização total de acordo com a condição física e necessidades específicas de cada aluno."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "O Pilates pode ser praticado por qualquer pessoa?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sim. Por ser uma atividade de baixo impacto, o Pilates é adaptável para diferentes perfis e objetivos, sendo um excelente complemento para fortalecer o corpo e melhorar a postura."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Hero Section - Sticky */}
-            <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
+            <section className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
                 <ParallaxBackground text="PILATES" intensity={2} className="h-1/2! bottom-auto" />
                 <ParallaxBackground text="BALANCE" intensity={-2} className="top-1/2 h-1/2" showGrid={false} showLines={false} />
 
@@ -38,36 +86,17 @@ export default function PilatesPage() {
                         <div className="w-full lg:w-1/2">
                             <RevealItem>
                                 <h1 className="text-6xl md:text-9xl font-black uppercase italic leading-[0.8] tracking-tighter mb-8">
-                                    Pilates <br />
-                                    <span className="text-primary italic">Personalizado</span>
+                                    Pilates
                                 </h1>
                             </RevealItem>
 
                             <RevealItem>
                                 <p className="text-xl md:text-2xl text-white/70 uppercase font-medium leading-tight mb-12 max-w-xl">
-                                    O Pilates no Studio Fits You é realizado com até 2 pessoas por turma. A aula é personalizada para a condição e necessidade de cada aluno.
+                                    No Studio Fits You, o Pilates é realizado em turmas reduzidas, o que permite que cada aula seja personalizada de acordo com a condição e as necessidades de cada aluno.
                                 </p>
                             </RevealItem>
                         </div>
 
-                        <motion.div
-                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
-                            style={{ x: xMove }}
-                        >
-                            <RevealItem className="h-full">
-                                <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
-                                    <div className="absolute inset-0 skew-x-12 scale-125">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1518611012118-2960f8bab6fe?q=80&w=2070&auto=format&fit=crop"
-                                            alt="Pilates"
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </RevealItem>
-                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -85,25 +114,31 @@ export default function PilatesPage() {
                                 transition={{ duration: 0.8 }}
                             >
                                 <p className="text-xl md:text-2xl font-medium leading-tight uppercase mb-8">
-                                    Nosso foco é a melhoria da força, da postura e da flexibilidade, fundamental para qualquer idade. É por ser uma prática com baixo impacto, podemos trabalhar com qualquer público.
+                                    A prática tem como foco o desenvolvimento da força, da postura e da flexibilidade — capacidades fundamentais em qualquer fase da vida. Por ser uma atividade de baixo impacto, pode ser adaptada para diferentes perfis e objetivos.
                                 </p>
                                 <p className="text-lg text-secondary/70 uppercase font-bold leading-tight">
-                                    O Pilates traz bem-estar, flexibilidade, melhor postura e melhor desempenho nas atividades do dia-a-dia, além de complementar atividades físicas de alto impacto, já que melhora a estabilização do centro do corpo.
+                                    O Pilates promove bem-estar, melhora a postura, aumenta a flexibilidade e contribui para um melhor desempenho nas atividades do dia a dia. Também é um excelente complemento para práticas de maior impacto, pois fortalece e estabiliza o centro do corpo.
                                 </p>
                             </motion.div>
                         </div>
 
                         <div className="w-full lg:w-1/2">
-                            <div className="relative h-[450px] -skew-x-6 overflow-hidden border-2 border-secondary/10 shadow-[20px_20px_0px_0px_rgba(30,30,30,0.05)]">
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="relative h-[400px] md:h-[500px] border-4 border-secondary/10 -skew-x-6 overflow-hidden shadow-[20px_20px_0px_0px_rgba(30,30,30,0.05)]"
+                            >
                                 <div className="absolute inset-0 skew-x-6 scale-110">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1599447421416-3414502d18a5?q=80&w=2070"
+                                        src="/pilates_methodology_custom.png"
                                         alt="Pilates Methodology"
                                         fill
                                         className="object-cover"
                                     />
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

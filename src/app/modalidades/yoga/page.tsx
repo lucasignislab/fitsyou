@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { Check } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
@@ -18,18 +17,89 @@ const benefits = [
 ];
 
 export default function YogaPage() {
-    const heroRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"]
-    });
-
-    const xMove = useTransform(scrollYProgress, [0, 0.7], [0, 400]);
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/yoga/#service",
+                "name": "Yoga Fits You - SwáSthya e Vinyasa",
+                "serviceType": "Instrução de Yoga e Meditação",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "description": "Práticas de Yoga em Campinas focadas na união entre corpo, mente e espírito. Oferecemos SwáSthya Yôga para desempenho pessoal e Vinyasa Yoga para equilíbrio dinâmico.",
+                "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Barão Geraldo, Campinas"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Modalidades de Yoga",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "SwáSthya Yôga",
+                                "description": "Técnicas milenares para alto desempenho físico, mental e emocional."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Vinyasa Yoga",
+                                "description": "Prática dinâmica e vigorosa sincronizada com a respiração."
+                            }
+                        }
+                    ]
+                },
+                "mentions": [
+                    {
+                        "@type": "Person",
+                        "name": "Luiz Eduardo Borges",
+                        "jobTitle": "Professor de Yoga",
+                        "affiliation": {
+                            "@type": "Organization",
+                            "name": "Instituto Yogaterapia"
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/yoga/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Quais os benefícios do Yoga no Studio Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A prática promove consciência corporal, redução do estresse, flexibilidade, força, paz interior e melhora do foco através de técnicas adaptadas ao ritmo do aluno."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Qual a diferença entre SwáSthya e Vinyasa Yoga?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O SwáSthya foca no desempenho e autoconhecimento, enquanto o Vinyasa é uma prática intensa e fluida que sincroniza posturas e respiração."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Hero Section - Sticky */}
-            <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
+            <section className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
                 <ParallaxBackground text="YOGA" intensity={2} className="h-1/2! bottom-auto" />
                 <ParallaxBackground text="ZEN" intensity={-2} className="top-1/2 h-1/2" showGrid={false} showLines={false} />
 
@@ -46,24 +116,6 @@ export default function YogaPage() {
                             </RevealItem>
                         </div>
 
-                        <motion.div
-                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
-                            style={{ x: xMove }}
-                        >
-                            <RevealItem className="h-full">
-                                <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
-                                    <div className="absolute inset-0 skew-x-12 scale-125">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2040&auto=format&fit=crop"
-                                            alt="Yoga"
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </RevealItem>
-                        </motion.div>
                     </div>
                 </div>
             </section>

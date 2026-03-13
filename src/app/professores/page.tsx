@@ -65,10 +65,123 @@ const teachers = [
 ];
 
 export default function ProfessoresPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ItemList",
+                "@id": "https://fitsyou.com.br/professores/#equipe",
+                "name": "Equipe Técnica Fits You - Especialistas em Performance e Saúde",
+                "description": "Técnicos de elite em Campinas especializados em Cross Training, Pilates, Yoga e Reabilitação.",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Samuel Hernandes",
+                            "jobTitle": "Professor Responsável",
+                            "knowsAbout": ["Massoterapia", "Biomecânica", "Pilates"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Marcela Calux",
+                            "jobTitle": "Professora de Cross Training",
+                            "knowsAbout": ["Performance", "Cross Training", "Atleta RX"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Luiz Eduardo Borges",
+                            "jobTitle": "Professor de Yoga",
+                            "knowsAbout": ["Vinyasa Yoga", "Yogaterapia"],
+                            "affiliation": { "@type": "Organization", "name": "Instituto Yogaterapia" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Lucas Trematore",
+                            "jobTitle": "Professor",
+                            "knowsAbout": ["Reabilitação", "Pilates", "LPO"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Victor Gadelha",
+                            "jobTitle": "Professor",
+                            "knowsAbout": ["Pilates", "Força", "Treinamento Funcional"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Larissa Medina",
+                            "jobTitle": "Professora",
+                            "knowsAbout": ["Swásthya", "Hatha", "Yoga Restaurativo"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Danielle Mancini",
+                            "jobTitle": "Professora",
+                            "knowsAbout": ["Pilates"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "Person",
+                            "name": "Izabelle Cesco",
+                            "jobTitle": "Professora",
+                            "knowsAbout": ["Pilates"]
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/professores/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Quem são os professores do Studio Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A Fits You conta com uma equipe multidisciplinar de técnicos de elite em Campinas, especialistas em áreas como Biomecânica, Performance, Reabilitação, LPO e diferentes vertentes de Yoga e Pilates."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     const [selectedTeacher, setSelectedTeacher] = useState<typeof teachers[0] | null>(null);
 
     return (
         <main className="pt-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Faixa Preta (Espaçador) */}
             <div className="w-full h-8 md:h-12 bg-background border-b border-white/5" />
 

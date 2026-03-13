@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { Check } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
 import LeadCapture from "@/components/LeadCapture";
@@ -18,18 +18,86 @@ const benefits = [
 ];
 
 export default function MassagemPage() {
-    const heroRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"]
-    });
-
-    const xMove = useTransform(scrollYProgress, [0, 0.7], [0, 400]);
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://fitsyou.com.br/massagem/#service",
+                "name": "Massagem e Recuperação Muscular Fits You",
+                "serviceType": "Terapia de Massagem e Bem-estar",
+                "provider": {
+                    "@id": "https://fitsyou.com.br/#localbusiness"
+                },
+                "description": "Serviços de massagem relaxante, desportiva e drenagem em Campinas. Ambiente dedicado à recuperação muscular, alívio de tensões e redução de stress com profissionais qualificados.",
+                "areaServed": {
+                    "@type": "AdministrativeArea",
+                    "name": "Barão Geraldo, Campinas"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Técnicas de Massagem",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Massagem Relaxante",
+                                "description": "Foco em bem-estar pleno e redução de stress."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Massagem Desportiva",
+                                "description": "Foco em recuperação muscular para atletas e praticantes de atividade física."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Drenagem",
+                                "description": "Técnica focada na saúde física e redução de retenção de líquidos."
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://fitsyou.com.br/massagem/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Quais os benefícios da massagem no Studio Fits You?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nossas massagens focam na recuperação muscular, alívio de tensões, redução de stress e promoção de bem-estar geral em um ambiente exclusivo e acolhedor."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "O Fits You oferece massagem para atletas?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sim, oferecemos a técnica de massagem desportiva, ideal para quem busca recuperação muscular acelerada após treinos de alta performance como o Cross Training."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
 
     return (
         <main className="min-h-screen pt-20 overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Hero Section - Sticky */}
-            <section ref={heroRef} className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
+            <section className="sticky top-20 h-[80vh] border-b border-white/5 bg-secondary overflow-hidden z-0">
                 <ParallaxBackground text="MASSAGEM" intensity={2} className="h-1/2! bottom-auto" />
                 <ParallaxBackground text="RELAX" intensity={-2} className="top-1/2 h-1/2" showGrid={false} showLines={false} />
 
@@ -49,24 +117,6 @@ export default function MassagemPage() {
                             </RevealItem>
                         </div>
 
-                        <motion.div
-                            className="w-full lg:w-1/2 relative h-[400px] hidden lg:block"
-                            style={{ x: xMove }}
-                        >
-                            <RevealItem className="h-full">
-                                <div className="relative h-full border-4 border-white/10 -skew-x-12 overflow-hidden shadow-[30px_30px_0px_0px_rgba(255,25,25,0.1)]">
-                                    <div className="absolute inset-0 skew-x-12 scale-125">
-                                        <Image
-                                            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070"
-                                            alt="Massage"
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </RevealItem>
-                        </motion.div>
                     </div>
                 </div>
             </section>
