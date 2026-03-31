@@ -38,6 +38,19 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WZF56QDT');
           `}
         </Script>
+        
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-720604604" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-720604604');
+            gtag('event', 'conversion', {'send_to': 'AW-720604604/KvwTCIndlcQDELybztcC'});
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}

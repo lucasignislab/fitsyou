@@ -11,7 +11,7 @@ const modalities = [
         description: "Treinamento de alta intensidade focado em força e condicionamento metabólico.",
         icon: <Zap className="w-10 h-10" />,
         color: "bg-primary",
-        image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop",
+        image: "/FOTOCROSS.JPEG",
         link: "/modalidades/cross-training"
     },
     {
@@ -19,7 +19,7 @@ const modalities = [
         description: "Melhore seus movimentos naturais e ganhe agilidade para o dia a dia.",
         icon: <Target className="w-10 h-10" />,
         color: "bg-white",
-        image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
+        image: "/FOTOFUNCIONAL.jpg",
         link: "/modalidades/treinamento-funcional"
     },
     {
@@ -27,7 +27,7 @@ const modalities = [
         description: "Equilíbrio entre corpo e mente com foco em core, postura e flexibilidade.",
         icon: <Heart className="w-10 h-10" />,
         color: "bg-zinc-800",
-        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop",
+        image: "/FOTOPILATES.JPG",
         link: "/modalidades/pilates"
     },
     {
@@ -35,7 +35,7 @@ const modalities = [
         description: "Conexão profunda através da respiração, posturas e meditação para equilíbrio total.",
         icon: <Flower2 className="w-10 h-10" />,
         color: "bg-white",
-        image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?q=80&w=2070&auto=format&fit=crop",
+        image: "/FOTOYOGA.jpg",
         link: "/modalidades/yoga"
     },
     {
@@ -43,7 +43,7 @@ const modalities = [
         description: "Técnicas manuais para relaxamento muscular, alívio de tensões e bem-estar.",
         icon: <Sprout className="w-10 h-10" />,
         color: "bg-primary",
-        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop",
+        image: "/salamassagem.JPG",
         link: "/modalidades/massagem"
     },
 ];

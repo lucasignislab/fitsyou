@@ -331,9 +331,14 @@ export default function ProfessoresPage() {
                 </div>
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <h2 className="text-4xl md:text-6xl font-black uppercase italic mb-8">Pronto para começar?</h2>
-                    <button className="bg-white text-primary px-12 py-5 font-black uppercase italic hover:bg-black hover:text-white transition-all -skew-x-12">
+                    <a 
+                        href="https://wa.me/5519993188049"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-white text-primary px-12 py-5 font-black uppercase italic hover:bg-black hover:text-white transition-all -skew-x-12"
+                    >
                         <span className="skew-x-12 inline-block">Agende sua aula experimental</span>
-                    </button>
+                    </a>>
                 </div>
             </section>
         </main>
