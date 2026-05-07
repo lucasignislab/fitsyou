@@ -338,7 +338,7 @@ export default function ProfessoresPage() {
                         className="inline-block bg-white text-primary px-12 py-5 font-black uppercase italic hover:bg-black hover:text-white transition-all -skew-x-12"
                     >
                         <span className="skew-x-12 inline-block">Agende sua aula experimental</span>
-                    </a>>
+                    </a>
                 </div>
             </section>
         </main>
