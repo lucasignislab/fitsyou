@@ -2,13 +2,16 @@
 
 import Modalities from "@/components/Modalities";
 import LeadCapture from "@/components/LeadCapture";
+import { useState } from "react";
 import { ArrowRight, Zap, Trophy, Users, Star, MapPin } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 import ParallaxBackground from "@/components/ui/ParallaxBackground";
 import RevealingSection, { RevealItem } from "@/components/ui/RevealingSection";
+import ImageModal from "@/components/ui/ImageModal";
 
 export default function Home() {
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -120,9 +123,12 @@ export default function Home() {
                   <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </Link>
 
-                <Link href="/horarios" className="px-8 py-5 border-2 border-white text-white font-black text-xl uppercase tracking-tighter hover:bg-white hover:text-black transition-all duration-300 text-center">
+                <button
+                  onClick={() => setIsScheduleModalOpen(true)}
+                  className="px-8 py-5 border-2 border-white text-white font-black text-xl uppercase tracking-tighter hover:bg-white hover:text-black transition-all duration-300 text-center cursor-pointer"
+                >
                   Ver horários
-                </Link>
+                </button>
               </div>
             </RevealItem>
           </div>
@@ -218,6 +224,13 @@ export default function Home() {
       <RevealingSection className="py-24 bg-background">
         <LeadCapture />
       </RevealingSection>
+
+      <ImageModal
+        isOpen={isScheduleModalOpen}
+        onClose={() => setIsScheduleModalOpen(false)}
+        imageSrc="/tabelahorario.png"
+        alt="Tabela de Horários Fits You"
+      />
     </main>
   );
 }

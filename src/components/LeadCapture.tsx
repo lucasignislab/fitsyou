@@ -1,6 +1,6 @@
 "use client";
 
-import { Download } from "lucide-react";
+import { Download, FileDown } from "lucide-react";
 
 export default function LeadCapture() {
     return (
@@ -45,6 +45,31 @@ export default function LeadCapture() {
                             <p className="text-[10px] text-white/30 uppercase text-center font-bold tracking-[0.2em] mt-6">
                                 Nós odiamos spam. Seus dados estão seguros conosco.
                             </p>
+                            <p className="text-xs text-white/50 uppercase text-center font-bold tracking-widest mt-4">
+                                Ou, se preferir, faça download.
+                            </p>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    const files = ["/tabelahorario.png", "/tabeladevalores.jpeg"];
+                                    files.forEach((file, index) => {
+                                        setTimeout(() => {
+                                            const a = document.createElement("a");
+                                            a.href = file;
+                                            a.download = file.split("/").pop() || file;
+                                            document.body.appendChild(a);
+                                            a.click();
+                                            document.body.removeChild(a);
+                                        }, index * 300);
+                                    });
+                                }}
+                                className="w-full bg-primary text-white font-black py-5 px-8 uppercase italic flex items-center justify-center gap-3 hover:bg-white hover:text-black transition-all -skew-x-12 group cursor-pointer mt-4"
+                            >
+                                <span className="skew-x-12 flex items-center gap-2">
+                                    <FileDown size={20} />
+                                    Download
+                                </span>
+                            </button>
                         </form>
                     </div>
                 </div>
