@@ -54,7 +54,7 @@ export default function Footer() {
                         © 2026 Fits You Studio. All rights reserved.
                     </p>
                     <p className="text-[10px] text-secondary/30 uppercase font-bold tracking-[0.3em]">
-                        Created by <a href="https://www.lucascoelho.site" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Lucas Coelho</a>
+                        Created by <a href="https://lucascoelhoux.site/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Lucas Coelho</a>
                     </p>
                 </div>
             </div>
